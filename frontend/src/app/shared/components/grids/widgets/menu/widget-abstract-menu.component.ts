@@ -48,7 +48,7 @@ export abstract class WidgetAbstractMenuComponent {
     return async () => this.menuItemList;
   }
 
-  protected get removeItem() {
+  protected get removeItem():OpContextMenuItem {
     return {
       linkText: this.i18n.t('js.grid.remove'),
       onClick: () => {
