@@ -393,15 +393,6 @@ export class TeamPlannerComponent extends UntilDestroyedMixin implements OnInit,
     this.initializeCalendar();
     this.projectIdentifier = this.currentProject.identifier || undefined;
 
-    this
-      .querySpace
-      .results
-      .values$()
-      .pipe(this.untilDestroyed())
-      .subscribe(() => {
-        this.ucCalendar.getApi().refetchEvents();
-      });
-
     this.calendar.resize$
       .pipe(
         this.untilDestroyed(),
